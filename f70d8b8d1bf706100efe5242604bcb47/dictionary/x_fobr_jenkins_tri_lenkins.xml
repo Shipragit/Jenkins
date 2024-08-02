@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="0e6d47cd1bf706100efe5242604bcbb1" label="Lenkins" max_length="40" name="x_fobr_jenkins_tri_lenkins" type="collection">
+        <element display="true" label="Jenkins" mandatory="true" max_length="40" name="jenkins" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+    </element>
+</database>
