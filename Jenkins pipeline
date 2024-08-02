@@ -3,8 +3,8 @@ pipeline {
     environment {
         BRANCH = "${BRANCH_NAME}"
         APPSYSID = 'f70d8b8d1bf706100efe5242604bcb47'
-        CREDENTIALS = '7b4ca59e-8486-486c-895e-f044a5297447'
-        DEVENV = 'https://devinstance.service-now.com/'
+        CREDENTIALS = 'Shipra@2018'
+        DEVENV = 'https://brightspeedtsmqa1.service-now.com/'
         TESTENV = 'https://testinstance.service-now.com/'
         PRODENV = 'https://prodinstance.service-now.com/'
         TESTSUITEID = 'b1ae55eedb541410874fccd8139619fb'
@@ -17,7 +17,7 @@ pipeline {
                         isAppCustomization: true, obtainVersionAutomatically: true, incrementBy: 2)
             }
         }
-        stage('Install') {
+        /*stage('Install') {
             steps {
                 snInstallApp(credentialsId: "${CREDENTIALS}", url: "${TESTENV}", appSysId: "${APPSYSID}", baseAppAutoUpgrade: false)
                 snRunTestSuite(credentialsId: "${CREDENTIALS}", url: "${TESTENV}", testSuiteSysId: "${TESTSUITEID}", withResults: true)
@@ -32,4 +32,4 @@ pipeline {
             }
         }
     }
-}
+}*/
