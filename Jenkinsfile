@@ -3,7 +3,7 @@ pipeline {
     environment {
         BRANCH = "${BRANCH_NAME}"
         APPSYSID = 'f70d8b8d1bf706100efe5242604bcb47'
-        CREDENTIALS = 'Shipra@2018'
+        CREDENTIALS = 'git-hub'
         DEVENV = 'https://brightspeedtsmqa1.service-now.com/'
         TESTENV = 'https://testinstance.service-now.com/'
         PRODENV = 'https://prodinstance.service-now.com/'
