@@ -30,6 +30,6 @@ pipeline {
             steps {
                 snInstallApp(credentialsId: "${CREDENTIALS}", url: "${PRODENV}", appSysId: "${APPSYSID}", baseAppAutoUpgrade: false)
             }
-        }
+        }*/
     }
-}*/
+}
