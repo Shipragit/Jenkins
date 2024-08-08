@@ -9,7 +9,6 @@ pipeline {
         PRODENV = 'https://prodinstance.service-now.com/'
         TESTSUITEID = 'b1ae55eedb541410874fccd8139619fb'
     }
-    // dummy commite
     stages {
         stage('Build') {
             steps {
