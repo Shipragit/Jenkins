@@ -35,13 +35,13 @@ pipeline {
                 	always {
                         	emailext (
                                 	subject: "Pipeline status ${currentBuild.result}"
-                                	body: '''<html> 
+                                	body: """<html> 
                                                 	<body>
-                                                		<h1>Build Status: ${currentBuild.result}</h1>
-                                                        	<h1>Build Number: ${currentBuild.number}</h1>
-                                                        	<h1>Check the <a href="${evn.BUILD_URL}">console output</a>.</h1>
+                                                		<p>Build Status: ${currentBuild.result}</p>
+                                                        	<p>Build Number: ${currentBuild.number}</p>
+                                                        	<p>Check the <a href="${evn.BUILD_URL}">console output</a>.</p>
                                                 	</body>
-                                        	</html>''',
+                                        	</html>""",
                                 	to: 'shiva291291@gmail.com',
                                 	from: 'shiva291291@gmail.com',
                                 	replyTo: 'shiva291291@gamil.com',
