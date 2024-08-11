@@ -31,5 +31,24 @@ pipeline {
                 snInstallApp(credentialsId: "${CREDENTIALS}", url: "${PRODENV}", appSysId: "${APPSYSID}", baseAppAutoUpgrade: false)
             }
         }*/
+	post {
+                always {
+                        emailext (
+                                subject: "Pipeline status ${currentBuild.result}"
+                                body: '''<html> 
+                                                <body>
+                                                        <P>Build Status: ${currentBuild.result}<P>
+                                                        <P>Build Number: ${currentBuild.number}<P>
+                                                        <P>Check the <a href="${evn.BUILD_URL}">console output</a>.</p>
+                                                <body>
+                                        <html>'''
+                                to:'shiva291291@gmail.com',
+                                from:'shiva291291@gmail.com',
+                                replyTo:'shiva291291@gamil.com',
+                                mimeType:'text/html'
+                        )
+                }
+        }
+
     }
 }
