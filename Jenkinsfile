@@ -31,24 +31,12 @@ pipeline {
                 snInstallApp(credentialsId: "${CREDENTIALS}", url: "${PRODENV}", appSysId: "${APPSYSID}", baseAppAutoUpgrade: false)
             }
         }*/
-	post {
-                	always {
-                        	emailext (
-                                	subject: "Pipeline status ${currentBuild.result}"
-                                	body: """<html> 
-                                                	<body>
-                                                		<p>Build Status: ${currentBuild.result}</p>
-                                                        	<p>Build Number: ${currentBuild.number}</p>
-                                                        	<p>Check the <a href="${evn.BUILD_URL}">console output</a>.</p>
-                                                	</body>
-                                        	</html>""",
-                                	to: 'shiva291291@gmail.com',
-                                	from: 'shiva291291@gmail.com',
-                                	replyTo: 'shiva291291@gamil.com',
-                                	mimeType: 'text/html'
-                        	)
-                	}
-        	}
-
+	   	 post {
+    			failure {
+        			mail to: 'team@example.com',
+             				subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             				body: "Something is wrong with ${env.BUILD_URL}"
+    				}
+			}
     }
 }
