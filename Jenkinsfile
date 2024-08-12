@@ -31,12 +31,12 @@ pipeline {
                 snInstallApp(credentialsId: "${CREDENTIALS}", url: "${PRODENV}", appSysId: "${APPSYSID}", baseAppAutoUpgrade: false)
             }
         }*/
-	   	 post {
-    			failure {
-        			mail to: 'shiva291291@gamil.com',
-             				subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-             				body: "Something is wrong with ${env.BUILD_URL}"
-    				}
-			}
+	   post {
+    		failure {
+        		mail to: 'shiva291291@gamil.com',
+             			subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             			body: "Something is wrong with ${env.BUILD_URL}"
+    			}
+		}
     }
 }
